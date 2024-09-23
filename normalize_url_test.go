@@ -9,6 +9,21 @@ func TestNormalizeURL(t *testing.T) {
 			inputURL: "https://blog.boot.dev/path",
 			expected: "blog.boot.dev/path",
 		},
+		{
+			name:     "remove scheme with slash at the end",
+			inputURL: "https://blog.boot.dev/path/",
+			expected: "blog.boot.dev/path",
+		},
+		{
+			name:     "remove scheme http",
+			inputURL: "http://blog.boot.dev/path",
+			expected: "blog.boot.dev/path",
+		},
+		{
+			name:     "remove scheme http with slash at the end",
+			inputURL: "http://blog.boot.dev/path/",
+			expected: "blog.boot.dev/path",
+		},
         // add more test cases here
 	}
 
