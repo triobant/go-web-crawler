@@ -33,7 +33,7 @@ func main() {
 
     cfg, err := configure(rawBaseURL, maxConcurrency, maxPages)
     if err != nil {
-        fmt.Println("Error - configure: %v", err)
+        fmt.Printf("Error - configure: %v", err)
         return
     }
 
