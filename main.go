@@ -6,11 +6,14 @@ import (
 )
 
 func main() {
-    argsWithoutProg := os.Args[1:]
-    if len(argsWithoutProg) < 1 {
+    if len(os.Args) < 2 {
         fmt.Println("no website provided")
-    } else if len(argsWithoutProg) > 1 {
-        fmt.Println("too many arguments provided")
+        os.Exit(1)
     }
-    fmt.Printf("starting crawl of: %s", argsWithoutProg)
+    if len(os.Args) > 2 {
+        fmt.Println("too many arguments provided")
+        os.Exit(1)
+    }
+    rawBaseURL := os.Args[1]
+    fmt.Printf("starting crawl of: %s...\n", rawBaseURL)
 }
