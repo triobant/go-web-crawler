@@ -15,5 +15,13 @@ func main() {
         os.Exit(1)
     }
     rawBaseURL := os.Args[1]
+
     fmt.Printf("starting crawl of: %s...\n", rawBaseURL)
+
+    htmlBody, err := getHTML(rawBaseURL)
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    fmt.Println(htmlBody)
 }
